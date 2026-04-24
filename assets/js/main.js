@@ -1,4 +1,7 @@
+const body = document.body;
 const header = document.querySelector(".site-header");
+const hero = document.getElementById("hero");
+const heroCard = document.querySelector(".hero-card");
 const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -27,6 +30,7 @@ const closeMobileMenu = () => {
 
     menuToggle.setAttribute("aria-expanded", "false");
     mobileMenu.classList.remove("is-open");
+    body.classList.remove("menu-open");
 };
 
 if (menuToggle && mobileMenu) {
@@ -34,6 +38,7 @@ if (menuToggle && mobileMenu) {
         const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
         menuToggle.setAttribute("aria-expanded", String(!isExpanded));
         mobileMenu.classList.toggle("is-open", !isExpanded);
+        body.classList.toggle("menu-open", !isExpanded);
     });
 }
 
@@ -51,7 +56,7 @@ const revealObserver = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.18
+    threshold: 0.16
 });
 
 revealItems.forEach((item) => {
@@ -59,6 +64,28 @@ revealItems.forEach((item) => {
         revealObserver.observe(item);
     }
 });
+
+const updateHeroSpotlight = (event) => {
+    if (!hero) {
+        return;
+    }
+
+    const rect = hero.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+    hero.style.setProperty("--hero-pointer-x", `${x}%`);
+    hero.style.setProperty("--hero-pointer-y", `${y}%`);
+
+    if (heroCard) {
+        heroCard.style.setProperty("--spotlight-x", `${x}%`);
+        heroCard.style.setProperty("--spotlight-y", `${Math.max(y - 8, 0)}%`);
+    }
+};
+
+if (hero && window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+    hero.addEventListener("pointermove", updateHeroSpotlight);
+}
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 updateHeaderState();

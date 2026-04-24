@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="site-noise" aria-hidden="true"></div>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
 
     <header class="site-header" id="topo">
@@ -52,9 +53,11 @@
     </header>
 
     <main id="conteudo">
-        <section class="hero section section-hero">
+        <section class="hero section section-hero" id="hero">
             <div class="hero-bg" aria-hidden="true">
                 <div class="hero-grid"></div>
+                <div class="hero-rings"></div>
+                <div class="hero-spotlight"></div>
                 <div class="hero-orb hero-orb-gold"></div>
                 <div class="hero-orb hero-orb-blue"></div>
             </div>
@@ -62,7 +65,10 @@
             <div class="container hero-layout">
                 <div class="hero-copy reveal is-visible">
                     <p class="eyebrow">Consultoria estratégica de alto impacto</p>
-                    <h1>Transformamos ambição empresarial em crescimento sustentável.</h1>
+                    <div class="hero-title-wrap">
+                        <span class="hero-kicker">Para empresas que querem sair do comum</span>
+                        <h1>Transformamos ambição empresarial em crescimento memorável.</h1>
+                    </div>
                     <p class="hero-text">
                         Ajudamos empresas brasileiras a tomar decisões com mais clareza, margem e velocidade por meio de estratégia, marketing, finanças e transformação digital.
                     </p>
@@ -75,11 +81,31 @@
                         <li>Planos práticos e mensuráveis</li>
                         <li>Acompanhamento focado em ROI</li>
                     </ul>
+
+                    <div class="trust-ribbon reveal">
+                        <span>Estratégia</span>
+                        <span>Performance</span>
+                        <span>Eficiência</span>
+                        <span>Posicionamento</span>
+                        <span>Escala</span>
+                        <span>Clareza decisória</span>
+                    </div>
                 </div>
 
                 <aside class="hero-panel reveal" aria-label="Indicadores de performance">
                     <div class="hero-card">
-                        <p class="hero-card-label">Resultados orientados por dados</p>
+                        <div class="hero-card-top">
+                            <p class="hero-card-label">Resultados orientados por dados</p>
+                            <span class="hero-card-chip">Alta precisão</span>
+                        </div>
+
+                        <div class="hero-strategy-flow" aria-hidden="true">
+                            <span>Diagnóstico</span>
+                            <span>Direção</span>
+                            <span>Execução</span>
+                            <span>Resultado</span>
+                        </div>
+
                         <div class="hero-metrics">
                             <article>
                                 <strong>+500</strong>
@@ -98,11 +124,44 @@
                                 <span>Prazo médio de retorno comercial</span>
                             </article>
                         </div>
+
+                        <div class="hero-floating-card hero-floating-card-top">
+                            <span class="floating-label">Crescimento</span>
+                            <strong>+37%</strong>
+                            <small>média em previsibilidade comercial</small>
+                        </div>
+
+                        <div class="hero-floating-card hero-floating-card-bottom">
+                            <span class="floating-dot"></span>
+                            <div>
+                                <strong>Operação sob controle</strong>
+                                <small>estratégia, finanças e execução alinhadas</small>
+                            </div>
+                        </div>
                     </div>
                 </aside>
             </div>
 
             <a class="scroll-indicator" href="#sobre" aria-label="Ir para a seção sobre"></a>
+        </section>
+
+        <section class="section impact-band-section">
+            <div class="container">
+                <div class="impact-band reveal">
+                    <article>
+                        <span>Consultoria boutique</span>
+                        <strong>Projetos sob medida para negócios que querem crescer com sofisticação.</strong>
+                    </article>
+                    <article>
+                        <span>Leitura executiva</span>
+                        <strong>Diagnósticos profundos e decisões traduzidas em planos realmente executáveis.</strong>
+                    </article>
+                    <article>
+                        <span>Presença premium</span>
+                        <strong>Uma abordagem que posiciona sua empresa com mais autoridade, consistência e confiança.</strong>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section class="section section-dark" id="sobre">
@@ -154,6 +213,7 @@
                         <div class="icon-wrap">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V6l-8-4Zm0 3.2 5 2.5v4.3c0 3.6-2.2 7.1-5 8.3-2.8-1.2-5-4.7-5-8.3V7.7l5-2.5Z"/></svg>
                         </div>
+                        <span class="card-index">01</span>
                         <h3>Consultoria estratégica</h3>
                         <p>Direcionamento executivo, análise de mercado, posicionamento e prioridades para crescimento sustentável.</p>
                     </article>
@@ -162,6 +222,7 @@
                         <div class="icon-wrap">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16v2H2V3h2v16Zm3-2V9h3v8H7Zm5 0V5h3v12h-3Zm5 0v-6h3v6h-3Z"/></svg>
                         </div>
+                        <span class="card-index">02</span>
                         <h3>Marketing e crescimento</h3>
                         <p>Aquisição, funil, autoridade de marca e performance comercial para acelerar geração de demanda qualificada.</p>
                     </article>
@@ -170,6 +231,7 @@
                         <div class="icon-wrap">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a9 9 0 0 0-9 9c0 5.5 4.2 10.1 9.6 10.9v2.1h2.8v-2.1A11 11 0 0 0 21 10a9 9 0 0 0-9-9Zm1 17.9V17h3v-2h-3v-2h3v-2h-4a2 2 0 1 1 0-4h5V5h-3V3h-2v2h-1a4 4 0 0 0 0 8h1v2H8v2h4v1.9A7 7 0 0 1 5 10a7 7 0 1 1 8 8.9Z"/></svg>
                         </div>
+                        <span class="card-index">03</span>
                         <h3>Assessoria financeira</h3>
                         <p>Organização de caixa, rentabilidade, custos e planejamento para apoiar decisões com mais segurança.</p>
                     </article>
@@ -178,8 +240,41 @@
                         <div class="icon-wrap">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v2h2a2 2 0 0 1 2 2v2h2v6h-2v2a2 2 0 0 1-2 2h-2v2H9v-2H7a2 2 0 0 1-2-2v-2H3V9h2V7a2 2 0 0 1 2-2h2V3Zm0 4H7v2h2V7Zm8 0h-2v2h2V7Zm-8 8H7v2h2v-2Zm8 0h-2v2h2v-2Zm-6-8v10h2V7h-2Z"/></svg>
                         </div>
+                        <span class="card-index">04</span>
                         <h3>Transformação digital</h3>
                         <p>Automação, processos e ferramentas para ganhar eficiência operacional e escalar com mais controle.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-process">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Como atuamos</p>
+                    <h2>Um método elegante, claro e orientado para execução.</h2>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card reveal">
+                        <span>01</span>
+                        <h3>Imersão</h3>
+                        <p>Mapeamos contexto, gargalos e oportunidades para entender o negócio com profundidade.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span>02</span>
+                        <h3>Definição estratégica</h3>
+                        <p>Traduzimos prioridades em decisões, metas e frentes de trabalho de alto impacto.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span>03</span>
+                        <h3>Implementação guiada</h3>
+                        <p>Acompanhamos a execução para que a estratégia realmente aconteça com consistência.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span>04</span>
+                        <h3>Otimização contínua</h3>
+                        <p>Ajustamos indicadores, rituais e ações para sustentar performance no longo prazo.</p>
                     </article>
                 </div>
             </div>
@@ -243,8 +338,9 @@
 
                 <div class="testimonial-grid">
                     <article class="testimonial-card reveal">
+                        <span class="quote-mark">“</span>
                         <p>
-                            "A Nexus reorganizou nossa frente financeira e tornou a operação mais previsível. Em poucos meses, conseguimos melhorar margem e tomar decisões com muito mais segurança."
+                            A Nexus reorganizou nossa frente financeira e tornou a operação mais previsível. Em poucos meses, conseguimos melhorar margem e tomar decisões com muito mais segurança.
                         </p>
                         <footer>
                             <strong>Ricardo Mendes</strong>
@@ -253,8 +349,9 @@
                     </article>
 
                     <article class="testimonial-card reveal">
+                        <span class="quote-mark">“</span>
                         <p>
-                            "O trabalho com marketing e crescimento trouxe foco para o comercial. Nossas campanhas passaram a gerar leads mais qualificados e o time ganhou ritmo."
+                            O trabalho com marketing e crescimento trouxe foco para o comercial. Nossas campanhas passaram a gerar leads mais qualificados e o time ganhou ritmo.
                         </p>
                         <footer>
                             <strong>Ana Silva</strong>
@@ -263,8 +360,9 @@
                     </article>
 
                     <article class="testimonial-card reveal">
+                        <span class="quote-mark">“</span>
                         <p>
-                            "Finalmente entendemos nossos números com clareza. A consultoria nos ajudou a crescer sem perder controle nem eficiência operacional."
+                            Finalmente entendemos nossos números com clareza. A consultoria nos ajudou a crescer sem perder controle nem eficiência operacional.
                         </p>
                         <footer>
                             <strong>Carlos Oliveira</strong>
